@@ -1,0 +1,61 @@
+opcion=0
+def calcularIVA():
+    print ("Fx calcularIVA")
+    try:
+        precio= int (input("Ingrese precio: "))
+    except ValueError:
+        print ("Ingrese un dato válido")        
+    iva= precio*0.19
+    totalFinal=precio+iva
+    print (f"iva={iva}")
+    print (f"final= {totalFinal}")
+    
+def calcularDesc():
+    print ("Fx calcularDesc")
+    precio= int (input("Ingrese precio: "))
+    descuento= int (input ("Ingrese descuento: "))
+    totalFin= precio-(precio*descuento/100)
+    print (f"Precio final: {totalFin}")
+    
+def calcularIMC ():
+    print ("Fx calcularIMC")
+    peso= int(input("Ingrese peso (Kg): "))
+    estatura= float(input("Ingrese estatura (cm): "))
+    imc=peso/(estatura/100)**2
+    if imc<18.5:
+        print (f"IMC: {imc}")
+        print ("Bajo peso")
+    elif imc>18.5 and imc<24.9:
+        print (f"IMC: {imc}")        
+        print ("Adecuado")
+    elif imc>25 and imc<29.9:
+        print (f"IMC: {imc}")
+        print ("Sobrepeso")
+    elif imc>30 and imc<34.9:
+        print (f"IMC: {imc}")
+        print ("Obesidad grado 1")
+    elif imc>35 and imc<39.9:
+        print (f"IMC: {imc}")
+        print ("Obesidad grado 2")
+    elif imc>40:
+        print (f"IMC: {imc}")
+        print ("Obesidad grado 3")
+
+while True:
+    print ("1. Calcular IVA\n2. Descuento\n3. Calcular IMC\n4. Salir")
+    try:
+        opcion=int(input("Ingrese opción: "))
+    except:
+        opcion==0
+    
+    if opcion==1:
+        calcularIVA()
+    if opcion==2:
+        calcularDesc()
+    if opcion==3:
+        calcularIMC ()
+    if opcion==4:
+        print ("bai")
+    break
+
+
